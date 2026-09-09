@@ -399,7 +399,7 @@ function meshForColor(rgb) {
 gl.enable(gl.DEPTH_TEST);
 gl.clearColor(0.12, 0.09, 0.07, 1);
 
-const cam = { x: 0, y: 1.6, z: 3.5, yaw: 0, pitch: -0.12 };
+const cam = { x: 0, y: 1.65, z: 3.2, yaw: Math.PI, pitch: -0.08 }; // face -Z into room content
 const keys = {};
 let dragging = false, lastX = 0, lastY = 0;
 let lastZone = "";
@@ -428,8 +428,10 @@ canvas.addEventListener("click", (e) => {
 
 function resize() {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  canvas.width = Math.floor(canvas.clientWidth * dpr);
-  canvas.height = Math.floor(canvas.clientHeight * dpr);
+  const w = Math.max(canvas.clientWidth || window.innerWidth || 800, 1);
+  const h = Math.max(canvas.clientHeight || window.innerHeight || 600, 1);
+  canvas.width = Math.floor(w * dpr);
+  canvas.height = Math.floor(h * dpr);
   gl.viewport(0, 0, canvas.width, canvas.height);
 }
 window.addEventListener("resize", resize);
