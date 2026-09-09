@@ -1,1 +1,1 @@
-"""Optional minimal web demo."""
+"""Optional web demo + 3D institute space."""

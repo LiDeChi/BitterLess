@@ -59,8 +59,22 @@ bitterless --json           # 打印 CycleResult JSON
 
 ```bash
 bitterless-web --port 8765
-# 打开 http://127.0.0.1:8765/
+# classic http://127.0.0.1:8765/
+# 3D page  http://127.0.0.1:8765/institute/
 ```
+
+
+## 3D Institute
+
+Navigable WebGL institute (research desk, sealed model room, xianying photo wall, bamboo slips + sand table).
+
+```bash
+bitterless-web --port 8765
+# open /institute/  (live state at /api/state , POST /api/cycle)
+```
+
+Controls: WASD move, drag to look, click objects for provenance.
+Assets: src/bitterless/web/static/institute/
 
 ## 测试
 
@@ -78,7 +92,8 @@ src/bitterless/
   institute/       # researcher thread + research cycle
   seed/            # Eastern Zhou micro-seed
   demo/cli.py      # CLI
-  web/app.py       # optional stdlib web
+  web/app.py       # stdlib web + 3D institute + /api/*
+  web/static/      # institute 3D assets
 tests/
 docs/
 ```
